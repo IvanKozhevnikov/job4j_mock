@@ -20,13 +20,13 @@ public class Wisher {
     @JoinColumn(name = "interview_id")
     private Interview interview;
 
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private int userId;
 
-    @Column(name="contact_by")
+    @Column(name = "contact_by")
     private String contactBy;
 
-    @Column(name="approve")
+    @Column(name = "approve")
     private boolean approve;
 
     @Column(name = "status")
