@@ -45,8 +45,6 @@ class IndexControllerTest {
     @MockBean
     private TopicsService topicsService;
     @MockBean
-    private InterviewsService interviewsService;
-    @MockBean
     private InterviewProfileService interviewProfileService;
     @MockBean
     private AuthService authService;
