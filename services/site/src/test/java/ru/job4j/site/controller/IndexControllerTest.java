@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.ui.ConcurrentModel;
 import ru.job4j.site.SiteSrv;
 import ru.job4j.site.domain.Breadcrumb;
-import ru.job4j.site.dto.CategoryDTO;
+import ru.job4j.site.dto.CategoryTotalInterviewDTO;
 import ru.job4j.site.dto.InterviewProfileDTO;
 import ru.job4j.site.dto.TopicDTO;
 import ru.job4j.site.service.*;
@@ -39,9 +39,7 @@ class IndexControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
-    private CategoriesService categoriesService;
-    @MockBean
-    private  ProfilesService profilesService;
+    private CategoryTotalInterviewService categoriesService;
     @MockBean
     private TopicsService topicsService;
     @MockBean
@@ -56,8 +54,8 @@ class IndexControllerTest {
     @BeforeEach
     void initTest() {
         this.indexController = new IndexController(
-                categoriesService, profilesService, authService, notificationService, interviewProfileService
-        );
+                        categoriesService, authService, notificationService, interviewProfileService
+                );
     }
 
     @Test
@@ -76,8 +74,8 @@ class IndexControllerTest {
         var topicDTO2 = new TopicDTO();
         topicDTO2.setId(2);
         topicDTO2.setName("topic2");
-        var cat1 = new CategoryDTO(1, "name1");
-        var cat2 = new CategoryDTO(2, "name2");
+        var cat1 = new CategoryTotalInterviewDTO(1, "name1");
+        var cat2 = new CategoryTotalInterviewDTO(2, "name2");
         var listCat = List.of(cat1, cat2);
         var firstInterview = new InterviewProfileDTO(1, 1, 1, 1, "root",
                 "interview1", "description1", "contact1",
@@ -89,7 +87,7 @@ class IndexControllerTest {
         when(topicsService.getByCategory(cat1.getId())).thenReturn(List.of(topicDTO1));
         when(topicsService.getByCategory(cat2.getId())).thenReturn(List.of(topicDTO2));
         when(categoriesService.getMostPopular()).thenReturn(listCat);
-        when(interviewProfileService.getByType(1, profilesService)).thenReturn(listInterviews);
+        when(interviewProfileService.getByType(1)).thenReturn(listInterviews);
         var listBread = List.of(new Breadcrumb("Главная", "/"));
         var model = new ConcurrentModel();
         var view = indexController.getIndexPage(model, null);
