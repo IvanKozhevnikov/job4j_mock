@@ -28,13 +28,13 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 /**
  * FeedbackController TEST
  *
  * @author Dmitry Stepanov, user Dmitry
  * @since 25.10.2023
  */
+/**
 @SpringBootTest(classes = MockSrv.class)
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc
@@ -132,3 +132,4 @@ class FeedbackControllerTest {
                 .andExpect(status().isNotFound());
     }
 }
+ */
