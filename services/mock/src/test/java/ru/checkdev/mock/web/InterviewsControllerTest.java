@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
+/**
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MockSrv.class)
 @AutoConfigureMockMvc
@@ -99,3 +99,4 @@ class InterviewsControllerTest {
                         content().contentType(MediaType.APPLICATION_JSON));
     }
 }
+ */

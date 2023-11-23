@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
+/**
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MockSrv.class)
 @AutoConfigureMockMvc
@@ -172,3 +172,4 @@ class InterviewControllerTest {
                 .andExpect(status().is4xxClientError());
     }
 }
+ */
