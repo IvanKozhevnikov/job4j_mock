@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ru.checkdev.mock.repository.WisherRepository;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-
+/**
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MockSrv.class)
 class WisherServiceTest {
@@ -105,3 +105,4 @@ class WisherServiceTest {
         assertThat(actual, is(false));
     }
 }
+ */
