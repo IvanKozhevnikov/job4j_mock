@@ -34,7 +34,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author Dmitry Stepanov, user Dmitry
  * @since 25.10.2023
  */
-/**
+
 @SpringBootTest(classes = MockSrv.class)
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc
@@ -132,4 +132,3 @@ class FeedbackControllerTest {
                 .andExpect(status().isNotFound());
     }
 }
- */

@@ -16,7 +16,7 @@
                 <constraints unique="true"/>
             </column>
             <column name="password" type="varchar(2000)"/>
-            <column name="key" type="varchar(2000)"/>
+            <column name="key_profile" type="varchar(2000)"/>
             <column name="active" type="boolean" defaultValueBoolean="false"/>
         </createTable>
 
@@ -24,7 +24,7 @@
             <column autoIncrement="true" name="id" type="int">
                 <constraints unique="true" nullable="false" primaryKey="true"/>
             </column>
-            <column name="value" type="varchar(200)"/>
+            <column name="value_role" type="varchar(200)"/>
         </createTable>
 
         <createTable tableName="person_role">

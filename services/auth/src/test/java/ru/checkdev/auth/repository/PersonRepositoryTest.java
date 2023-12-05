@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  * @author Dmitry Stepanov
  * @version 22.09.2023'T'21:14
  */
-/**@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @DataJpaTest()
 public class PersonRepositoryTest {
     @Autowired
@@ -31,7 +31,7 @@ public class PersonRepositoryTest {
 
     @Before
     public void clearTable() {
-        entityManager.createQuery("delete from person").executeUpdate();
+        entityManager.createQuery("delete from profile").executeUpdate();
     }
 
     @Test
@@ -51,4 +51,4 @@ public class PersonRepositoryTest {
         var listProfileDTO = personRepository.findProfileOrderByCreatedDesc();
         assertThat(listProfileDTO, is(Collections.emptyList()));
     }
-}*/
+}

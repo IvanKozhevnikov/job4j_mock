@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-/**@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class SubscribeTopicTest {
 
@@ -30,4 +30,4 @@ public class SubscribeTopicTest {
         subscribeTopic.setId(1);
         assertThat(1, is(subscribeTopic.getId()));
     }
-}*/
+}

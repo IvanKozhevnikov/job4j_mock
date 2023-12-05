@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 /**
  * @author olegbelov
  */
-/**@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class TemplateServiceTest {
 
@@ -46,4 +46,4 @@ public class TemplateServiceTest {
         assertFalse(result.contains(template));
     }
 
-}*/
+}

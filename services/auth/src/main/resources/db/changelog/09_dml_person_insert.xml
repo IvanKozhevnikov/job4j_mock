@@ -13,7 +13,7 @@
         </insert>
 
         <insert tableName="role">
-            <column name="value" value="ROLE_ADMIN"/>
+            <column name="value_role" value="ROLE_ADMIN"/>
         </insert>
 
         <insert tableName="person_role">

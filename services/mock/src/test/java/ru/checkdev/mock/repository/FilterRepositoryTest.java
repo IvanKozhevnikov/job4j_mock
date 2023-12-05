@@ -15,7 +15,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertTrue;
 
-/**@ExtendWith(SpringExtension.class)
+@ExtendWith(SpringExtension.class)
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class FilterRepositoryTest {
@@ -64,6 +64,6 @@ public class FilterRepositoryTest {
     @Test
     public void whenTryToDeleteFilterByIncorrectUserId() {
         entityManager.createQuery("delete from interview").executeUpdate();
-        assertThat(Optional.of(0)).isEqualTo(filterRepository.deleteByUserId(1));
+        assertThat(filterRepository.deleteByUserId(1)).isEqualTo(0);
     }
-}*/
+}

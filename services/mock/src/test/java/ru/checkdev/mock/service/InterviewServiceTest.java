@@ -27,7 +27,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-/**
+
 @SpringBootTest(classes = MockSrv.class)
 @RunWith(SpringRunner.class)
 class InterviewServiceTest {
@@ -176,4 +176,3 @@ class InterviewServiceTest {
         assertThat(interviewService.findByTopicsIds(List.of(1, 3, 5, 7), 0, 5), is(oddPage));
     }
 }
- */

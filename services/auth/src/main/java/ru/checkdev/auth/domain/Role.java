@@ -1,9 +1,6 @@
 package ru.checkdev.auth.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @author parsentev
@@ -14,6 +11,8 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "value_role")
     private String value;
 
 
@@ -24,9 +23,9 @@ public class Role {
         this.id = id;
     }
 
-    public Role(String value) {
+    public Role(String valueRole) {
         this();
-        this.value = value;
+        this.value = valueRole;
     }
 
     public int getId() {
@@ -41,8 +40,8 @@ public class Role {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setValue(String valueRole) {
+        this.value = valueRole;
     }
 
     @Override

@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-/**
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MockSrv.class)
 @AutoConfigureMockMvc
@@ -130,4 +130,3 @@ class WishersControllerTest {
 
     }
 }
- */

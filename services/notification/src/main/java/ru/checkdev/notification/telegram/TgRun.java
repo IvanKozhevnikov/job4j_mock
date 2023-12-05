@@ -28,11 +28,11 @@ import java.util.Map;
 @Slf4j
 public class TgRun {
     private final TgAuthCallWebClint tgAuthCallWebClint;
-    @Value("${tg.username}")
+    @Value("${tg.username:}")
     private String username;
-    @Value("${tg.token}")
+    @Value("${tg.token:}")
     private String token;
-    @Value("${server.site.url.login}")
+    @Value("${server.site.url.login:}")
     private String urlSiteAuth;
 
     public TgRun(TgAuthCallWebClint tgAuthCallWebClint) {

@@ -27,6 +27,7 @@ public class Profile {
     @Column(unique = true)
     private String email;
 
+    @Column(name = "key_profile")
     private String key;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -39,6 +40,7 @@ public class Profile {
     private boolean show;
 
     private String salary;
+
     @Column(name = "about_short")
     private String aboutShort;
 
@@ -95,8 +97,8 @@ public class Profile {
         this.location = location;
     }
 
-    public Profile(String key, String experience, String salary, String aboutShort, String username, String location, Object photo) {
-        this.key = key;
+    public Profile(String keyProfile, String experience, String salary, String aboutShort, String username, String location, Object photo) {
+        this.key = keyProfile;
         this.experience = experience;
         this.salary = salary;
         this.aboutShort = aboutShort;
@@ -107,12 +109,12 @@ public class Profile {
         }
     }
 
-    public Profile(int id, String username, String email, String key, String password, boolean active, String experience,
+    public Profile(int id, String username, String email, String keyProfile, String password, boolean active, String experience,
                    boolean show, String salary, String aboutShort, String about, Photo photo, boolean privacy, String location) {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.key = key;
+        this.key = keyProfile;
         this.password = password;
         this.active = active;
         this.experience = experience;
@@ -123,6 +125,27 @@ public class Profile {
         this.photo = photo;
         this.privacy = privacy;
         this.location = location;
+    }
+
+    public Profile(int id, String about, String aboutShort, boolean active, Calendar created, String email, String experience, String key,
+                   String location, String password, Photo photo, boolean privacy, String salary, boolean show, Calendar updated, String username) {
+        this.id = id;
+        this.about = about;
+        this.aboutShort = aboutShort;
+        this.active = active;
+        this.created = created;
+        this.email = email;
+        this.experience = experience;
+        this.key = key;
+        this.location = location;
+        this.password = password;
+        this.photo = photo;
+        this.privacy = privacy;
+        this.salary = salary;
+        this.show = show;
+        this.updated = updated;
+        this.username = username;
+
     }
 
     public String getUsername() {

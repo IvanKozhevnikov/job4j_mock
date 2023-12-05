@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import ru.checkdev.auth.domain.Profile;
-import ru.checkdev.auth.repository.PersonRepository;
-
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,14 +19,11 @@ import static org.junit.Assert.assertTrue;
  * @author parsentev
  * @since 21.09.2016
  */
-/**@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class PersonServiceTest {
     @Autowired
     private PersonService service;
-
-    @Autowired
-    private PersonRepository persons;
 
     @After
     @Test
@@ -38,11 +34,16 @@ public class PersonServiceTest {
         assertThat(result, is(Optional.empty()));
     }
 
-    @Test
+   @Test
     public void whenRegPersonRolesThenDropRoles() {
-        Profile profile = new Profile("Петр Арсентьев", "parsentev@yandex.ru", "password");
+        Calendar calendar = new Calendar.Builder()
+                .set(Calendar.DAY_OF_MONTH, 15)
+                .build();
+        Profile profile = new Profile("Петр Арсентьев",  String.format("%s@yandex.ru", System.currentTimeMillis()), "password");
         profile.setKey("test");
-        this.persons.save(profile);
+        profile.setUpdated(calendar);
+        profile.setCreated(calendar);
+        this.service.save(profile);
     }
 
     @Test
@@ -50,4 +51,4 @@ public class PersonServiceTest {
         List<Profile> profileList = this.service.getAll();
         assertTrue(profileList.size() > 0);
     }
-}*/
+}

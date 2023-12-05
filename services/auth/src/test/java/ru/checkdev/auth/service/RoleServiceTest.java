@@ -9,6 +9,7 @@ import ru.checkdev.auth.domain.Profile;
 import ru.checkdev.auth.domain.Role;
 import ru.checkdev.auth.repository.PersonRepository;
 
+import java.util.Calendar;
 import java.util.Collections;
 
 import static org.hamcrest.core.Is.is;
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertThat;
  * @author parsentev
  * @since 21.09.2016
  */
-/**@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class RoleServiceTest {
     @Autowired
@@ -30,10 +31,15 @@ public class RoleServiceTest {
     @Test
     public void whenAddRolesThenPersonHasRoles() {
         Role role = this.service.save(new Role("ROLE_ADMIN"));
+        Calendar calendar = new Calendar.Builder()
+                .set(Calendar.DAY_OF_MONTH, 15)
+                .build();
         Profile profile = new Profile("Петр Арсентьев", String.format("%s@yandex.ru", System.currentTimeMillis()), "password");
         profile.setRoles(Collections.singletonList(role));
+        profile.setCreated(calendar);
+        profile.setUpdated(calendar);
         this.persons.save(profile);
         Profile result = this.persons.findByEmail(profile.getEmail());
         assertThat(result.getRoles().isEmpty(), is(false));
     }
-}*/
+}

@@ -27,7 +27,7 @@ public class TemplateController {
     private final String access;
 
     @Autowired
-    public TemplateController(@Value("${access.key}") String access, final TemplateService templates, NotificationService notifications) {
+    public TemplateController(@Value("${access.key:}") String access, final TemplateService templates, NotificationService notifications) {
         this.templates = templates;
         this.notifications = notifications;
         this.access = access;

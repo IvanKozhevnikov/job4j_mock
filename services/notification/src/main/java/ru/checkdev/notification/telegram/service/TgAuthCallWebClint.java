@@ -19,7 +19,7 @@ import ru.checkdev.notification.domain.PersonDTO;
 public class TgAuthCallWebClint {
     private WebClient webClient;
 
-    public TgAuthCallWebClint(@Value("${server.auth}") String urlAuth) {
+    public TgAuthCallWebClint(@Value("${server.auth:}") String urlAuth) {
         this.webClient = WebClient.create(urlAuth);
     }
 

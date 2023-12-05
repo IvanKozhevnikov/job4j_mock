@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThat;
  * @author olegbelov
  * @since 20.12.2016
  */
-/**@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class TemplateTest {
 
@@ -53,4 +53,4 @@ public class TemplateTest {
         template.setBody("NewBody");
         assertThat("NewBody", is(template.getBody()));
     }
-}*/
+}
