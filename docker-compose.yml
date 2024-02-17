@@ -15,7 +15,7 @@ services:
     network_mode: host
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: services/auth/Dockerfile
     environment:
       - JDBC_URL=jdbc:postgresql://db1:5432/cd_auth
       - JDBC_USERNAME=postgres
@@ -41,7 +41,7 @@ services:
     network_mode: host
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: services/desc/Dockerfile
     environment:
       - JDBC_URL=jdbc:postgresql://db2:5432/cd_desc
       - JDBC_USERNAME=postgres
@@ -67,7 +67,7 @@ services:
     network_mode: host
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: services/mock/Dockerfile
     environment:
       - JDBC_URL=jdbc:postgresql://db3:5432/mock
       - JDBC_USERNAME=postgres
@@ -93,7 +93,7 @@ services:
     network_mode: host
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: services/notification/Dockerfile
     environment:
       - JDBC_URL=jdbc:postgresql://db4:5432/cd_notification
       - JDBC_USERNAME=postgres
@@ -108,7 +108,7 @@ services:
     network_mode: host
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: services/site/Dockerfile
     ports:
       - "127.0.0.1:8080:8080"
     container_name: site
